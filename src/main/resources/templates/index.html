@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumeo — Student LMS</title>
+    <link rel="stylesheet" href="/css/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/js/header_landing.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .mesh-gradient {
+            background-color: #ffffff;
+            background-image:
+                    radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, rgba(235, 224, 255, 0.4) 50%),
+                    radial-gradient(at 100% 0%, hsla(225,39%,30%,0) 0, rgba(255, 230, 240, 0.4) 50%),
+                    radial-gradient(at 100% 100%, hsla(339,49%,30%,0) 0, rgba(235, 224, 255, 0.4) 50%),
+                    radial-gradient(at 0% 100%, hsla(197,37%,24%,0) 0, rgba(255, 245, 230, 0.4) 50%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .btn-gradient {
+            background: linear-gradient(90deg, #7C3AED 0%, #EC4899 100%);
+        }
+    </style>
+</head>
+<body class="mesh-gradient text-slate-800">
+
+<header id="main-header" class="fixed top-0 w-full z-[100] transition-all duration-300">
+    <nav id="nav-content" class="max-w-6xl mx-auto px-6 flex items-center justify-between py-6 transition-all duration-300">
+
+        <div class="flex items-center gap-2 flex-shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <span class="font-bold text-xl tracking-tight text-slate-800">Lumeo</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-500">
+            <a href="#features" class="hover:text-indigo-600 transition-colors">Features</a>
+            <a href="#how-it-works" class="hover:text-indigo-600 transition-colors">How it works</a>
+            <a href="#stories" class="hover:text-indigo-600 transition-colors">Stories</a>
+            <a href="#pricing" class="hover:text-indigo-600 transition-colors">Pricing</a>
+        </div>
+
+        <div class="flex-shrink-0">
+            <a th:href="@{/Login}"
+               class="inline-block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-purple-200 hover:scale-105 transition-all active:scale-95">
+                Log in
+            </a>
+        </div>
+    </nav>
+</header>
+
+<div class="max-w-6xl mx-auto px-6">
+    <div class="h-18"></div>
+
+    <header class="py-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-flex items-center gap-2 bg-white/80 border border-purple-100 px-3 py-1 rounded-full text-[10px] font-bold text-purple-600 mb-6 uppercase tracking-wider">
+                ✨ Built for students, by students
+            </div>
+            <h1 class="text-6xl font-bold leading-[1.1] text-slate-900 mb-6">
+                Your study life, <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-pink-500">beautifully organized.</span>
+            </h1>
+            <p class="text-slate-500 mb-8 max-w-lg leading-relaxed">
+                Lumeo is the LMS that keeps your handouts, schedules, quizzes, and classmates in one colorful, clutter-free space.
+            </p>
+            <div class="flex items-center gap-4">
+                <button class="btn-gradient text-white px-8 py-3.5 rounded-full font-bold text-sm shadow-xl shadow-purple-200">Get started free →</button>
+                <button class="bg-white px-8 py-3.5 rounded-full font-bold text-sm border border-slate-100 shadow-sm">Take a tour</button>
+            </div>
+        </div>
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=800" class="rounded-[2.5rem] shadow-2xl border-4 border-white" alt="App UI Preview">
+        </div>
+    </header>
+    <section class="py-16">
+        <div class="text-center mb-12">
+            <p class="text-[12px] uppercase tracking-[0.3em] font-bold text-violet-600 mb-3">Features</p>
+            <h2 class="text-5xl font-bold text-slate-900 mb-4">Built around how students actually study</h2>
+            <p class="text-slate-500 text-base">Six tools that work together to take the chaos out of school.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <div class="glass-card p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-sky-400 rounded-xl flex items-center justify-center text-white mb-6"><i data-lucide="cloud" class="w-5 h-5"></i></div>
+                <h4 class="font-bold text-lg mb-2">Cloudify</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Never lose a handout again. Store every PDF, slide, and note in one safe place.</p>
+            </div>
+            <div class="glass-card p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-violet-600 rounded-xl flex items-center justify-center text-white mb-6"><i data-lucide="brain-circuit" class="w-5 h-5"></i></div>
+                <h4 class="font-bold text-lg mb-2">Quizify</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Turn your readings into AI-generated quizzes in seconds. Study smarter, not longer.</p>
+            </div>
+            <div class="glass-card p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center text-white mb-6"><i data-lucide="calendar" class="w-5 h-5"></i></div>
+                <h4 class="font-bold text-lg mb-2">Class Schedule</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">A weekly view that actually feels good to open. Color-coded, drag-friendly.</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-pink-500 rounded-xl flex items-center justify-center text-white mb-6"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+                <h4 class="font-bold text-lg mb-2">Courses</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Track every term — Prelim, Midterm, Pre-finals, Finals — with materials by section.</p>
+            </div>
+            <div class="glass-card p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white mb-6"><i data-lucide="users" class="w-5 h-5"></i></div>
+                <h4 class="font-bold text-lg mb-2">Community</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Find your study buddies. Share notes, swap tips, and form groups in one feed.</p>
+            </div>
+            <div class="glass-card p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-indigo-500 rounded-xl flex items-center justify-center text-white mb-6"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                <h4 class="font-bold text-lg mb-2">Safe & private</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">Your files and study habits stay yours. Granular visibility on every course.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="text-center mb-12">
+            <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-violet-600 mb-2">How it works</p>
+            <h2 class="text-4xl font-bold text-slate-900 mb-10">From chaos to clarity in three steps</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-8 rounded-[2rem] relative">
+                <span class="absolute top-6 left-6 w-8 h-8 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold text-xs">1</span>
+                <div class="pt-10">
+                    <h4 class="font-bold mb-2">Sign up free</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Create your Lumeo account in seconds. No credit card needed.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-[2rem] relative">
+                <span class="absolute top-6 left-6 w-8 h-8 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold text-xs">2</span>
+                <div class="pt-10">
+                    <h4 class="font-bold mb-2">Add your classes</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Set up courses with schedules, professors, and term-by-term materials.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-[2rem] relative">
+                <span class="absolute top-6 left-6 w-8 h-8 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold text-xs">3</span>
+                <div class="pt-10">
+                    <h4 class="font-bold mb-2">Study with confidence</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Generate quizzes, store handouts, and connect with your community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="btn-gradient rounded-[2.5rem] p-10 text-white grid grid-cols-2 md:grid-cols-4 gap-8 text-center shadow-2xl shadow-purple-200">
+            <div>
+                <div class="text-3xl font-bold mb-1">12K+</div>
+                <div class="text-[9px] opacity-80 uppercase tracking-widest font-bold">Active Learners</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1">180K</div>
+                <div class="text-[9px] opacity-80 uppercase tracking-widest font-bold">Files Stored</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1">45K</div>
+                <div class="text-[9px] opacity-80 uppercase tracking-widest font-bold">Quizzes Generated</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1">4.9★</div>
+                <div class="text-[9px] opacity-80 uppercase tracking-widest font-bold">Average Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-8 rounded-[2rem]">
+            <div class="flex gap-0.5 mb-4 text-orange-400"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></div>
+            <p class="text-slate-600 text-xs italic mb-6 leading-relaxed">"Lumeo replaced four apps I was juggling. I finally know where my notes are."</p>
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-violet-500 flex items-center justify-center text-white font-bold text-[10px]">MS</div>
+                <div><p class="text-xs font-bold">Maria S.</p><p class="text-[9px] text-slate-400">BS Computer Science</p></div>
+            </div>
+        </div>
+
+        <div class="glass-card p-8 rounded-[2rem]">
+            <div class="flex gap-0.5 mb-4 text-orange-400"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></div>
+            <p class="text-slate-600 text-xs italic mb-6 leading-relaxed">"Quizify carried me through midterms. The PDF scanner is unreasonably good."</p>
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-violet-500 flex items-center justify-center text-white font-bold text-[10px]">JL</div>
+                <div><p class="text-xs font-bold">James L.</p><p class="text-[9px] text-slate-400">BA Communication</p></div>
+            </div>
+        </div>
+
+        <div class="glass-card p-8 rounded-[2rem]">
+            <div class="flex gap-0.5 mb-4 text-orange-400"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></div>
+            <p class="text-slate-600 text-xs italic mb-6 leading-relaxed">"It's the first study tool I actually enjoy opening. The colors don't hurt either."</p>
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-violet-500 flex items-center justify-center text-white font-bold text-[10px]">AC</div>
+                <div><p class="text-xs font-bold">Anna C.</p><p class="text-[9px] text-slate-400">BS Biology</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="max-w mx-auto pb-20">
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <div class="rounded-[2rem] bg-white/80 backdrop-blur border border-white/60 p-8 shadow-sm">
+                <p class="text-sm text-slate-500 mb-1">Free</p>
+                <p class="text-4xl font-bold text-slate-800 mb-4">
+                    $0
+                    <span class="text-base font-normal text-slate-500">/forever</span>
+                </p>
+                <ul class="flex flex-col gap-3 text-sm text-slate-600 mb-8">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Unlimited courses
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> 25 cloud files
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> Community access
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i> AI Quizify (5/month)
+                    </li>
+                </ul>
+                <button class="w-full px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold transition-all">
+                    Get started
+                </button>
+            </div>
+
+            <div class="rounded-[2rem] bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white p-8 relative overflow-hidden shadow-xl shadow-purple-200/50">
+            <span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/20 backdrop-blur text-[10px] font-bold uppercase tracking-wider">
+                Most popular
+            </span>
+
+                <p class="text-white/80 text-sm mb-1">Scholar</p>
+                <p class="text-4xl font-bold mb-4">
+                    $4
+                    <span class="text-base font-normal text-white/80">/month</span>
+                </p>
+                <ul class="flex flex-col gap-3 text-sm text-white/90 mb-8">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4"></i> Unlimited cloud storage
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4"></i> Unlimited AI quizzes
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4"></i> PDF-to-quiz scanning
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4"></i> Priority support
+                    </li>
+                </ul>
+                <button class="w-full px-5 py-3 rounded-xl bg-white text-purple-700 font-bold hover:bg-opacity-90 transition-all shadow-lg">
+                    Start free trial
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-24 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            Ready to make this semester your best one?
+        </h2>
+        <p class="text-lg text-slate-500 mb-10">
+            Join thousands of students already studying smarter with Lumeo.
+        </p>
+
+        <button class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-purple-200">
+            Log in to your account
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+    </section>
+</div>
+
+<footer class="border-t border-white/60 bg-white/50 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white">
+                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm text-slate-500">© 2026 Lumeo. Made for learners.</span>
+        </div>
+
+        <div class="flex items-center gap-8">
+            <a href="#" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-indigo-600 transition-colors">Privacy</a>
+            <a href="#" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-indigo-600 transition-colors">Terms</a>
+            <a href="#" class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-indigo-600 transition-colors">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

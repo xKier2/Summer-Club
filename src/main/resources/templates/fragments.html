@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <aside th:fragment="sidebar" class="hidden lg:flex sticky top-0 h-screen w-64 shrink-0 bg-linear-to-b from-indigo-600 via-purple-600 to-pink-500 text-white flex-col py-6 overflow-y-auto">
+
+        <div class="flex items-center gap-2 px-6 mb-8">
+            <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <span class="text-xl font-semibold tracking-wide">Lumeo</span>
+        </div>
+
+        <div class="mb-6">
+            <p class="px-6 mb-2 text-xs tracking-widest text-white/60 uppercase">Main Menu</p>
+            <div class="flex flex-col gap-1 px-3">
+                <a href="/" th:class="${activePage == 'dashboard' ? 'flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-purple-700 shadow-lg shadow-purple-900/30' : 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+
+                <a href="/courses" th:class="${activePage == 'courses' ? 'flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-purple-700 shadow-lg shadow-purple-900/30' : 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5.1"/><path d="M6.5 17.5h13.5"/></svg>
+                    <span>Courses</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <p class="px-6 mb-2 text-xs tracking-widest text-white/60 uppercase">Tools</p>
+            <div class="flex flex-col gap-1 px-3">
+                <a href="/quizify" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>Quizify</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-auto mb-6"> <p class="px-6 mb-2 text-xs tracking-widest text-white/60 uppercase">Account</p>
+            <div class="flex flex-col gap-1 px-3">
+                <a href="/settings" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.72V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.17a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+</body>
+</html>
