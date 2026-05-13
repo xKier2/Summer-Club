@@ -205,8 +205,13 @@
     </section>
 
     <section id="pricing" class="max-w mx-auto pb-20">
-        <div class="grid md:grid-cols-2 gap-5">
+        <div class="text-center mb-12">
+            <p class="text-[12px] uppercase tracking-[0.2em] font-bold text-violet-600 mb-2">PRICING</p>
+            <h2 class="text-4xl font-bold text-slate-900 mb-10">Simple plans for every learner</h2>
+            <p class="text-slate-500 text-base">Start free. Upgrade when you're ready. Switch between Personal and Organization anytime.</p>
+        </div>
 
+        <div class="grid md:grid-cols-2 gap-5">
             <div class="rounded-[2rem] bg-white/80 backdrop-blur border border-white/60 p-8 shadow-sm">
                 <p class="text-sm text-slate-500 mb-1">Free</p>
                 <p class="text-4xl font-bold text-slate-800 mb-4">
@@ -271,10 +276,10 @@
             Join thousands of students already studying smarter with Lumeo.
         </p>
 
-        <button class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-purple-200">
+        <a th:href="@{/Login}" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white font-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-purple-200">
             Log in to your account
             <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </button>
+        </a>
     </section>
 </div>
 

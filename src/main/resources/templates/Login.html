@@ -1,117 +1,183 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | LumeoLMS</title>
-    <link rel="stylesheet" href="/css/output.css">
-
-    <script src="../Services/Login_func.js"></script>
+    <title>Login | Lumeo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
     <style>
-        .btn-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-        }
-        .text-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+
+        input[type=password]::-ms-reveal,
+        input[type=password]::-ms-clear {
+            display: none;
         }
     </style>
 </head>
-<body class="bg-slate-50 font-sans antialiased h-screen w-full flex items-center justify-center">
+<body class="antialiased">
 
-    <div class="flex h-full w-full bg-white shadow-2xl overflow-hidden">
+<div class="min-h-screen flex bg-gradient-to-br from-indigo-50 via-rose-50 to-amber-50">
+    <aside class="hidden lg:flex flex-col justify-between w-[42%] bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white p-10 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-24 -left-16 w-96 h-96 bg-pink-300/20 rounded-full blur-3xl"></div>
 
-        <div class="flex w-full lg:w-1/2 flex-col justify-center bg-white px-8 md:px-20 lg:px-32 relative z-10">
-
-            <div class="absolute top-8 left-8 md:top-12 md:left-12">
-                <a th:href="@{/}" class="group flex items-center gap-3 text-slate-400 hover:text-violet-600 transition-all duration-300">
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-100 group-hover:border-violet-200 group-hover:bg-violet-50 transition-all shadow-sm">
-                        <i class="fa-solid fa-arrow-left text-sm"></i>
-                    </div>
-                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] hidden sm:block">Back to Home</span>
-                </a>
+        <button class="relative inline-flex items-center gap-2 text-white/90 hover:text-white transition">
+            <div class="w-9 h-9 rounded-xl bg-white/15 backdrop-blur flex items-center justify-center">
+                <i class="fa-solid fa-graduation-cap"></i>
             </div>
+            <span class="tracking-wide font-semibold">Lumeo</span>
+        </button>
 
-            <div class="w-full max-w-md mx-auto">
-                <div class="mb-10">
-                    <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 mb-4">Welcome back!</h1>
-                    <p class="text-slate-500 text-lg">Simplify your workflow with <span class="font-bold text-violet-600">Lumeo</span>. Get started for free.</p>
-                </div>
-
-                <form th:action="@{/dashboard}" method="post" class="space-y-5">
-                    <div>
-                        <input type="text" name="username" placeholder="Username" required
-                               class="w-full rounded-full border border-slate-200 bg-slate-50 px-8 py-5 text-lg outline-none transition-all focus:border-violet-400 focus:ring-4 focus:ring-violet-100">
+        <div class="relative">
+            <h2 class="text-3xl xl:text-4xl font-medium mb-4 leading-tight">
+                Welcome to your<br />study space.
+            </h2>
+            <p class="text-white/85 max-w-sm mb-8">
+                Sign in to access your courses, handouts, and quizzes — or create an account in under a minute.
+            </p>
+            <div class="flex flex-col gap-3 max-w-sm">
+                <div class="flex items-center gap-3 text-sm text-white/90">
+                    <div class="w-6 h-6 rounded-full bg-white/20 backdrop-blur flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-check text-[10px]"></i>
                     </div>
-
-                    <div class="relative">
-                        <input type="password" name="password" placeholder="Password" required
-                               class="w-full rounded-full border border-slate-200 bg-slate-50 px-8 py-5 text-lg outline-none transition-all focus:border-violet-400 focus:ring-4 focus:ring-violet-100">
-                        <button type="button" class="absolute right-8 top-1/2 -translate-y-1/2 text-slate-400 hover:text-violet-600">
-                            <i class="fa-regular fa-eye-slash text-xl"></i>
-                        </button>
-                    </div>
-
-                    <div class="flex justify-start">
-                        <a href="#" class="text-xs font-bold text-slate-700 hover:text-violet-600 uppercase tracking-wider">Forgot Password?</a>
-                    </div>
-
-                    <button type="submit"
-                            class="btn-gradient inline-block text-center w-full rounded-full py-5 text-xl font-bold text-white transition-all hover:opacity-90 active:scale-[0.98] shadow-xl shadow-purple-200 cursor-pointer">
-                        Login
-                    </button>
-                </form>
-
-                <div class="relative my-10 text-center">
-                    <span class="relative z-10 bg-white px-6 text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">or continue with</span>
-                    <div class="absolute inset-0 top-1/2 h-px w-full -translate-y-1/2 bg-slate-100"></div>
+                    All your handouts in one secure cloud
                 </div>
-
-                <div class="flex justify-center gap-6">
-                    <button class="flex h-14 w-14 items-center justify-center rounded-full border border-slate-100 shadow-sm transition-all hover:bg-slate-50 hover:border-violet-200">
-                        <i class="fa-brands fa-google text-2xl text-slate-700"></i>
-                    </button>
-                    <button class="flex h-14 w-14 items-center justify-center rounded-full border border-slate-100 shadow-sm transition-all hover:bg-slate-50 hover:border-violet-200">
-                        <i class="fa-brands fa-apple text-3xl text-slate-700"></i>
-                    </button>
-                    <button class="flex h-14 w-14 items-center justify-center rounded-full border border-slate-100 shadow-sm transition-all hover:bg-slate-50 hover:border-violet-200">
-                        <i class="fa-brands fa-facebook text-3xl text-slate-700"></i>
-                    </button>
+                <div class="flex items-center gap-3 text-sm text-white/90">
+                    <div class="w-6 h-6 rounded-full bg-white/20 backdrop-blur flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-check text-[10px]"></i>
+                    </div>
+                    AI-generated quizzes from your readings
                 </div>
-
-                <p class="mt-12 text-center text-slate-600">
-                    Not a member? <a th:href="@{/register}" class="font-bold text-violet-600 hover:underline">Register now</a>
-                </p>
+                <div class="flex items-center gap-3 text-sm text-white/90">
+                    <div class="w-6 h-6 rounded-full bg-white/20 backdrop-blur flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-check text-[10px]"></i>
+                    </div>
+                    Color-coded weekly schedule
+                </div>
+                <div class="flex items-center gap-3 text-sm text-white/90">
+                    <div class="w-6 h-6 rounded-full bg-white/20 backdrop-blur flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-check text-[10px]"></i>
+                    </div>
+                    A community of fellow learners
+                </div>
             </div>
         </div>
 
-        <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-violet-50 via-white to-pink-50 flex-col items-center justify-center p-20 relative overflow-hidden">
+        <p class="relative text-xs text-white/70">© 2026 Lumeo. Made for learners.</p>
+    </aside>
 
-            <div class="absolute top-0 right-0 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-50 -mr-20 -mt-20"></div>
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-100 rounded-full blur-3xl opacity-50 -ml-20 -mb-20"></div>
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col">
+        <!-- Mobile Header / Top Bar -->
+        <div class="flex items-center justify-between p-5">
+            <a th:href="@{/}" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 transition font-medium">
+                <i class="fa-solid fa-arrow-left"></i> Back to home
+            </a>
 
-            <div id="carousel-container" class="relative z-10 w-full max-w-lg flex flex-col items-center transition-all duration-700 ease-in-out">
-                <div class="w-full h-[500px] flex items-center justify-center mb-12">
-                    <img id="carousel-image" th:src="@{/Images/Login_Page/Graduation-bro.svg}"
-                         alt="LMS Illustration" class="w-full h-full object-contain transition-opacity duration-500 opacity-100 drop-shadow-2xl">
+            <div class="lg:hidden flex items-center gap-2">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-graduation-cap"></i>
                 </div>
-
-                <div class="text-center px-10">
-                    <h2 id="carousel-text" class="text-3xl font-bold text-slate-800 leading-snug transition-opacity duration-500 opacity-100">
-                        Unlock your potential with <span class="text-gradient">Lumeo's</span> advanced learning tools.
-                    </h2>
-
-                    <div class="mt-8 flex justify-center gap-3">
-                        <div id="dot-0" class="h-2 w-8 rounded-full bg-violet-600 transition-all duration-300"></div>
-                        <div id="dot-1" class="h-2 w-2 rounded-full bg-slate-300 transition-all duration-300"></div>
-                        <div id="dot-2" class="h-2 w-2 rounded-full bg-slate-300 transition-all duration-300"></div>
-                    </div>
-                </div>
+                <span class="tracking-wide text-slate-800 font-bold">Lumeo</span>
             </div>
+        </div>
+
+        <!-- Auth Form Container -->
+        <div class="flex-1 flex items-center justify-center p-5 sm:p-10">
+            <div class="w-full max-w-md">
+
+                <!-- Login Form -->
+                <form id="login-form" class="flex flex-col gap-5">
+                    <div>
+                        <h1 class="text-3xl font-semibold mb-2 text-slate-800">Welcome back</h1>
+                        <p class="text-slate-500">Log in to continue your learning journey.</p>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <label class="text-sm font-medium text-slate-600">
+                            Email
+                            <div class="relative mt-1">
+                                <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input type="email" placeholder="you@school.edu" required
+                                       class="w-full rounded-xl bg-slate-50 border border-slate-200 pl-11 pr-4 py-3 text-slate-800 outline-none focus:border-purple-400 focus:bg-white transition">
+                            </div>
+                        </label>
+
+                        <label class="text-sm font-medium text-slate-600">
+                            Password
+                            <div class="relative mt-1">
+                                <!-- Left Icon -->
+                                <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+
+                                <!-- Input: pl-11 gives space for lock icon, pr-12 gives space for eye button -->
+                                <input type="password" id="password-input" placeholder="Enter your password" required
+                                       class="w-full rounded-xl bg-slate-50 border border-slate-200 pl-11 pr-12 py-3 text-slate-800 outline-none focus:border-purple-400 focus:bg-white transition">
+
+                                <!-- Right Button: Only one icon inside -->
+                                <button type="button" onclick="togglePassword()" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition">
+                                    <i id="toggle-icon" class="fa-solid fa-eye text-sm"></i>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between text-sm">
+                        <label class="flex items-center gap-2 text-slate-600 cursor-pointer">
+                            <input type="checkbox" checked class="w-4 h-4 rounded accent-purple-600 border-slate-300">
+                            Remember me
+                        </label>
+                        <button type="button" class="text-purple-600 hover:text-purple-700 font-medium">Forgot password?</button>
+                    </div>
+
+                    <button type="submit" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold shadow-md hover:shadow-lg hover:brightness-105 transition-all">
+                        Log in <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+
+                    <div class="relative text-center text-xs text-slate-400 my-2">
+                        <span class="bg-gradient-to-br from-indigo-50 via-rose-50 to-amber-50 px-3 relative z-10">or</span>
+                        <div class="absolute inset-x-0 top-1/2 h-px bg-slate-200"></div>
+                    </div>
+
+                    <button type="button" class="flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors font-medium">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google icon">
+                        Continue with Google
+                    </button>
+
+                    <p class="text-center text-sm text-slate-500 mt-2">
+                        Don't have an account?
+                        <button type="button" class="text-purple-600 hover:text-purple-700 font-semibold transition">Sign up</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Modal Example (Hidden by Default) -->
+<div id="terms-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
+    <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-start">
+            <div>
+                <h3 class="text-xl font-bold text-slate-800">Terms and Conditions</h3>
+                <p class="text-sm text-slate-400">Last updated: May 2026</p>
+            </div>
+            <button class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+        <div class="p-6 overflow-y-auto max-h-[60vh] custom-scrollbar space-y-4 text-sm text-slate-600 leading-relaxed">
+            <p><strong class="text-slate-800 block mb-1">1. About Lumeo</strong> Lumeo is a learning management platform built for students. By creating an account, you agree to use the service responsibly and only for personal study.</p>
+            <p><strong class="text-slate-800 block mb-1">2. Your content</strong> Files, notes, and quizzes you upload remain yours. By uploading content, you grant Lumeo a limited license to store and display it back to you.</p>
+            <!-- Add more sections as needed -->
+        </div>
+        <div class="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
+            <button class="px-5 py-2 rounded-xl text-slate-600 hover:bg-slate-200 transition">Close</button>
+            <button class="px-6 py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium shadow-sm">I agree</button>
         </div>
     </div>
+</div>
+
 </body>
+<script src="/js/login_func.js"></script>
 </html>
