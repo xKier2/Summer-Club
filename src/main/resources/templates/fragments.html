@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 </head>
 <body>
     <aside th:fragment="sidebar" class="hidden lg:flex sticky top-0 h-screen w-64 shrink-0 bg-linear-to-b from-indigo-600 via-purple-600 to-pink-500 text-white flex-col py-6 overflow-y-auto">
@@ -26,21 +28,43 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5.1"/><path d="M6.5 17.5h13.5"/></svg>
                     <span>Courses</span>
                 </a>
+
+                <a href="/schedule" th:class="${activePage == 'schedule' ? 'flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-purple-700 shadow-lg shadow-purple-900/30' : 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                    <span>Class Schedule</span>
+                </a>
             </div>
         </div>
 
         <div class="mb-6">
             <p class="px-6 mb-2 text-xs tracking-widest text-white/60 uppercase">Tools</p>
             <div class="flex flex-col gap-1 px-3">
-                <a href="/quizify" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <a href="/quizzify" th:class="${activePage == 'quizzify' ? 'flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-purple-700 shadow-lg shadow-purple-900/30' : 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 640 640">
+                        <path d="M384 224L480 224L480 160L384 160L384 224zM96 224L96 144C96 117.5 117.5 96 144 96L496 96C522.5 96 544 117.5 544 144L544 240C544 266.5 522.5 288 496 288L144 288C117.5 288 96 266.5 96 240L96 224zM256 480L480 480L480 416L256 416L256 480zM96 480L96 400C96 373.5 117.5 352 144 352L496 352C522.5 352 544 373.5 544 400L544 496C544 522.5 522.5 544 496 544L144 544C117.5 544 96 522.5 96 496L96 480z"/>
+                    </svg>
                     <span>Quizify</span>
+                </a>
+
+                <a href="/cloudify" th:class="${activePage == 'cloudify' ? 'flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-purple-700 shadow-lg shadow-purple-900/30' : 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.48 0-.95.06-1.4.17A5.5 5.5 0 0 0 4 12c0 3 2.5 5 5 5h8.5Z"/></svg>
+                    <span>Cloudify</span>
+                </a>
+
+                <a href="/community" th:class="${activePage == 'community' ? 'flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-purple-700 shadow-lg shadow-purple-900/30' : 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Community</span>
                 </a>
             </div>
         </div>
 
         <div class="mt-auto mb-6"> <p class="px-6 mb-2 text-xs tracking-widest text-white/60 uppercase">Account</p>
             <div class="flex flex-col gap-1 px-3">
+                <a href="/account" th:class="${activePage == 'account' ? 'flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white text-purple-700 shadow-lg shadow-purple-900/30' : 'flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10'}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Account</span>
+                </a>
+
                 <a href="/settings" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/90 hover:bg-white/10">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.72V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.17a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
                     <span>Settings</span>
